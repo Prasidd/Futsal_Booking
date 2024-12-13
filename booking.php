@@ -13,7 +13,6 @@ if (isset($_POST['update_status'])) {
     $booking_id = $_POST['booking_id'];
     $new_status = $_POST['status'];
 
-    
     $update_query = "UPDATE booking SET b_status = '$new_status' WHERE b_id = '$booking_id'";
     if (mysqli_query($conn, $update_query)) {
         $message = "Booking status updated successfully!";
@@ -22,8 +21,12 @@ if (isset($_POST['update_status'])) {
     }
 }
 
+$bookings_query = mysqli_query($conn, "
+    SELECT b.b_id, b.u_id, b.b_status, b.b_date, b.b_time, u.u_name, u.u_contact
+    FROM booking b
+    JOIN user u ON b.u_id = u.u_id
+") or die("Query failed");
 
-$bookings_query = mysqli_query($conn, "SELECT * FROM booking") or die("Query failed");
 $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
 ?>
 
@@ -36,8 +39,7 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
     <title>Booking Management</title>
     <link rel="stylesheet" href="styles/booking.css" />
     <style>
-   
-        * {
+         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -94,6 +96,7 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
             padding: 30px;
             background-color: #fff;
             min-height: 100vh;
+            width: 1200px;
         }
 
         h1 {
@@ -136,6 +139,7 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
+            width: 100%;
         }
 
         .stat-card {
@@ -144,7 +148,7 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 900px;
+            max-width: 1400px;
         }
 
         .stat-card table {
@@ -192,6 +196,7 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
         }
 
     </style>
+    </style>
 </head>
 <body>
 <div class="sidebar">
@@ -202,7 +207,6 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
         <li><a href="admin.php">Dashboard</a></li>
         <li><a href="list.php">Users</a></li>
         <li><a href="booking.php">Bookings</a></li>
-        
         <li><a href="logout.php">Logout</a></li>
     </ul>
 </div>
@@ -210,7 +214,6 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
 <div class="main-content">
     <h1>Booking List</h1>
 
-  
     <?php if ($message != ''): ?>
     <div id="popup-message" class="message-popup">
         <p><?php echo $message; ?></p>
@@ -219,13 +222,13 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
     <?php endif; ?>
 
     <div class="stats-container">
-      
         <div class="stat-card">
-      
             <table>
                 <tr>
                     <th>Booking ID</th>
                     <th>User ID</th>
+                    <th>User Name</th> 
+                    <th>User Contact</th> 
                     <th>Status</th>
                     <th>Booked Date</th>
                     <th>Booked for</th>
@@ -235,11 +238,12 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
                 <tr>
                     <td><?php echo $booking['b_id']; ?></td>
                     <td><?php echo $booking['u_id']; ?></td>
+                    <td><?php echo $booking['u_name']; ?></td> 
+                    <td><?php echo $booking['u_contact']; ?></td> 
                     <td><?php echo $booking['b_status']; ?></td>
                     <td><?php echo $booking['b_date']; ?></td>
                     <td><?php echo $booking['b_time']; ?></td>
                     <td>
-                       
                         <form method="POST" action="" style="display: inline;">
                             <input type="hidden" name="booking_id" value="<?php echo $booking['b_id']; ?>" />
                             <select name="status" required>
@@ -255,12 +259,11 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
         </div>
     </div>
 </div>
-                                                                  
-</body>
+
 <script>
-    
     function closePopup() {
         document.getElementById("popup-message").style.display = "none";
     }
 </script>
+</body>
 </html>
