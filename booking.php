@@ -13,7 +13,7 @@ if (isset($_POST['update_status'])) {
     $booking_id = $_POST['booking_id'];
     $new_status = $_POST['status'];
 
-    // Update the booking status in the database
+    
     $update_query = "UPDATE booking SET b_status = '$new_status' WHERE b_id = '$booking_id'";
     if (mysqli_query($conn, $update_query)) {
         $message = "Booking status updated successfully!";
@@ -22,7 +22,7 @@ if (isset($_POST['update_status'])) {
     }
 }
 
-// Query for all bookings (both completed and pending)
+
 $bookings_query = mysqli_query($conn, "SELECT * FROM booking") or die("Query failed");
 $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
 ?>
@@ -36,7 +36,7 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
     <title>Booking Management</title>
     <link rel="stylesheet" href="styles/booking.css" />
     <style>
-        /* Basic Reset */
+   
         * {
             margin: 0;
             padding: 0;
@@ -105,19 +105,19 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
         }
 
         .message-popup {
-            background-color: #e0f7fa;
+            background-color: #030e2e;
             border: 1px solid #4caf50;
             padding: 20px;
             border-radius: 5px;
-            color: #00796b;
+            color:white;
             font-size: 16px;
             margin-bottom: 20px;
             text-align: center;
         }
 
         .message-popup button {
-            background-color: #00796b;
-            color: white;
+            background-color: white;
+            color: #030e2e;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
@@ -127,7 +127,8 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
         }
 
         .message-popup button:hover {
-            background-color: #004d40;
+            background-color: #030e2e;
+            color:white;
         }
 
         .stats-container {
