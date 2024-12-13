@@ -111,7 +111,7 @@ $user_name = $_SESSION['user_name'];
             text-align: center;
             padding: 20px;
             font-size: 16px;
-           
+            bottom:0px;
         }
      
      

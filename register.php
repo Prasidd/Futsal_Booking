@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $hashed_c_password = password_hash($cpass, PASSWORD_DEFAULT);
 
-    $select_users = mysqli_query($conn, "SELECT * FROM `user` WHERE u_email = '$email'") or die("query failed");
+    $select_users = mysqli_query($conn, "SELECT * FROM `user` WHERE u_email = '$email' or u_contact='$number'") or die("query failed");
 
     if(mysqli_num_rows($select_users)>0){
         $message = 'User already exists!';
@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
     <section class="container">
         <header>Registration Form</header>
 
-        <!-- Popup message box -->
+    
         <?php if ($message != ''): ?>
         <div id="popup-message" class="message-popup">
             <p><?php echo $message; ?></p>

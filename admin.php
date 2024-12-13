@@ -31,9 +31,6 @@ $total_income_sql = "8000";
 
 $total_income = $total_income_sql;
 
-
-$new_booking = '2';
-
 $conn->close();
 ?>
 
@@ -66,10 +63,7 @@ $conn->close();
                 <h3>Total Users</h3>
                 <p><?php echo $total_users; ?></p>
             </div>
-            <div class="stat-card">
-                <h3>New Booking</h3>
-                <p><?php echo $new_booking; ?></p>
-            </div>
+           
             <div class="stat-card">
                 <h3>Completed Bookings</h3>
                 <p><?php echo $completed_bookings; ?></p>
