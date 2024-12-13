@@ -1,0 +1,141 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #030e2e;
+}
+.container {
+   position: relative;
+   max-width: 400px;
+   width: 100%;
+   background: #fff;
+   padding: 10px;  /* Reduced from 25px to 15px */
+   border-radius: 8px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+   max-height: 600px;
+   height: 100%;
+ }
+ 
+.container header {
+  font-size: 1.5rem;
+  color: #030e2e;
+  font-weight: 600;
+  text-align: center;
+}
+.container .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 15px;
+}
+.input-box label {
+  color: #333;
+}
+.form :where(.input-box input, .select-box) {
+   position: relative;
+   height: 30px; 
+   width: 100%;
+   outline: none;
+   font-size: 1rem;
+   color: #707070;
+   margin-top: 8px;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   padding: 0 15px;
+ }
+ 
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+.submit{
+   height: 45px;  /* Reduced from 55px to 45px */
+   width: 100%;
+   color: #fff;
+   font-size: 1rem;
+   font-weight: 400;
+   margin-top: 20px;  /* Reduced margin-top */
+   border: none;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   background: #030e2e;
+ }
+ 
+.form button:hover {
+  background: #030e2e;
+}
+
+/* Popup message box */
+.message-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  background-color:  #030e2e;
+  color:white; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  text-align: center;
+  z-index: 1000;
+  max-width: 800px;
+}
+
+.message-popup p {
+  margin: 0;
+}
+
+.close-btn {
+  background-color: white;
+  color:#030e2e;;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.close-btn:hover {
+  background-color: #030e2e;
+  color: white;;
+}
+
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
+

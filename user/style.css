@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #9B5986;
+}
+
+.wrapper{
+    background-color: #fff;
+    width: 450px;
+}
+
+.wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px; 
+    justify-content: space-between;
+}
+
+header .icons span{
+    height: 38px;
+    width: 38px;
+    color: #878787;
+    font-size: 1.9rem;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%; 
+}
+
+header .icons span:last-child{
+    margin-right: -10px;
+}
+
+header .icons span:hover{
+    background-color: #f2f2f2;
+}
+
+header .current-date{
+    font-size: 1.45 rem;
+    font-weight: 500;
+}
+
+.calendar{
+    padding: 20px;
+}
+
+.calendar ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendar .days{
+    margin-bottom: 20px;
+}
+
+.calendar .weeks li{
+    font-weight: 500;
+}
+
+.days li.inactive{
+    color: #aaa;
+}
+
+.days li.active{
+    color: #fff;
+}
+
+.calendar ul li{
+    position: relative;
+    width: calc(100% / 7);
+}
+
+.calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.calendar .days li:before{
+    position:absolute;
+    content:"" ;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.days li:hover::before{
+    background: #f2f2f2;
+}
+
+.days li.active::before{
+    background-color:#9B5986 ;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10% auto;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  #time-slots button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  #time-slots button:hover {
+    background-color: #45a049;
+  }
+  
+  #close-modal {
+    margin-top: 20px;
+    background-color: red;
+  }
+  

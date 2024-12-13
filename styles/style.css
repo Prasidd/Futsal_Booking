@@ -1,0 +1,231 @@
+
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*root vaariable*/
+:root {
+    /* color */
+    --primary-color : #030e2e;
+    --primary-color-medium : #134B70;
+    --primary-color-light : #508C9B;
+    --secondary-color : #800000;
+    --secondary-color-light :#ac2222 ;
+
+    /*font*/
+    --primary-font : "Montserrat", sans-serif;
+    --font-size-large : 3rem;
+    --font-size-medium: rem;
+    --font-size-tiny : 1.5rem;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--primary-color);
+}
+
+
+
+.content {
+    background-color: rgb(19, 17, 17);
+    height: 70vh;
+    position: absolute; /* Position the overlay */
+    top: 50%; /* Center it vertically */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, -50%); /* Center it precisely */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* Text color for contrast */
+    padding: 20px;
+    border-radius: 8px; /* Optional: Rounded corners */
+    text-align: center;
+    width: 60%; /* Adjust width as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: Shadow for better visibility */
+    display: flex;
+    flex-direction: row;
+}
+.left{
+    width: 50%;
+    margin-top: 70px;
+}
+
+.left p{
+    font-family: var(--primary-font);
+    font-size: 20px;
+    line-height: 28px;
+    
+}
+
+.left h1{
+    font-family: var(--primary-font);
+    font-size: 40px;
+   
+}
+.right {
+    width: 50%;
+    margin-left: 2%;
+}
+
+.right img{
+    width:100%;
+    height: 100%;
+}
+
+#landing-book{
+    margin-top: 20px;
+    width: 60%;
+    height: 10%;
+    border: 1px solid;
+    border-radius: 10px;
+    font-family:var(--primary-font) ;
+    font-size: 18px;
+   color:white;
+   background-color: var(--primary-color);
+}
+
+.menu{
+    height: 9.6vh;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.m-left ul{
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 90px;
+    width: 100%;
+    list-style: none;
+    font-size: 20px;
+    text-align: center;
+    font-family: var(--primary-font);
+    cursor: pointer;
+    transform: 5s ease;
+    margin-left: 90%;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .icons a {
+    text-decoration: none;
+    color:var(--primary-color-medium); 
+    margin-left: 30px;
+  }
+  
+  .icons a:hover{
+    color:var(--primary-color-medium);
+  }
+
+
+.wrapper{
+    margin: 6% 6%;
+    background-color: var(--primary-color-light);
+    width: 450px;
+    color: white;
+ 
+}
+
+.wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px; 
+    justify-content: space-between;
+    font-family: var(--primary-font);
+}
+
+header .icons span{
+    height: 38px;
+    width: 38px;
+    color: var(--primary-color);
+    font-size: 1.9rem;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%; 
+}
+
+header .icons span:last-child{
+    margin-right: -10px;
+}
+
+header .icons span:hover{
+    background-color: var(--primary-color-medium);
+}
+
+header .current-date{
+    font-size: 1.45 rem;
+    font-weight: 500;
+}
+
+.calendar{
+    padding: 20px;
+    font-family: var(--primary-font);
+    
+}
+
+.calendar ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendar .days{
+    margin-bottom: 20px;
+}
+
+.calendar .weeks li{
+    font-weight: 500;
+}
+
+.days li.inactive{
+    color: var(--secondary-color);
+}
+
+.days li.active{
+    color: #fff;
+}
+
+.calendar ul li{
+    position: relative;
+    width: calc(100% / 7);
+}
+
+.calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.calendar .days li:before{
+    position:absolute;
+    content:"" ;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.days li:hover::before{
+    background: var(--primary-color-medium);
+}
+
+.days li.active::before{
+    background-color:var(--primary-color) ;
+}
+
+button a{
+    text-decoration: none;
+}
