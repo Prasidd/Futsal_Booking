@@ -1,11 +1,10 @@
 <?php
 
 include('user_dashboard.php');
-$conn = mysqli_connect('localhost', 'root', '', 'futsal_management') or die('Connection failed');
+include ('../config.php');
 
 if (!isset($_SESSION['user_id'])) {
-
-    header('Location: login.php');
+    header("Location: ../login.php"); 
     exit();
 }
 
@@ -96,6 +95,17 @@ $user = mysqli_fetch_assoc($result);
         .profile-info .edit-btn:hover {
             background-color: #222;
         }
+        footer {
+            background-color: #030e2e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            position:fixed;
+            bottom:0px;
+            width:100%;
+        }
+
 
     </style>
 </head>
@@ -121,6 +131,8 @@ $user = mysqli_fetch_assoc($result);
 
         
     </div>
-
+    <footer>
+        <p>&copy; 2024 Futsal Booking. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

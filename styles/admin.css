@@ -1,11 +1,10 @@
-/* General reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f7fa;
@@ -13,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* Container for content */
+
 .container {
     width: 75%;
     margin: 50px auto;
@@ -24,16 +23,14 @@ body {
     margin-left: 320px;
 }
 
-/* Header styling */
 header {
     font-size: 24px;
     font-weight: 600;
     text-align: center;
-    color: #030e2e; /* Main color */
+    color: #030e2e; 
     margin-bottom: 20px;
 }
 
-/* Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -57,12 +54,11 @@ td {
     background-color: #f9f9f9;
 }
 
-/* Hover effect for table rows */
+
 tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Button styling */
 button {
     background-color: #030e2e;
     color: white;
@@ -70,7 +66,7 @@ button {
     padding: 8px 16px
 }
 
-/* Sidebar Styles */
+
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -103,7 +99,7 @@ button {
     text-decoration: none;
     font-size: 18px;
     display: block;
-    padding: 10px;
+    padding: 5px;
     transition: background-color 0.3s;
 }
 

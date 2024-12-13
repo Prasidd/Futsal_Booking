@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-// Check if user is logged in
+
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php'); // Redirect to login if not logged in
+    header('Location:../login.php'); 
     exit();
 }
 
-$user_name = $_SESSION['user_name']; // Assuming user name is stored in session
+$user_name = $_SESSION['user_name']; 
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +51,7 @@ $user_name = $_SESSION['user_name']; // Assuming user name is stored in session
         .welcome {
         font-size: 24px;
         display: flex;
-        justify-content: space-between; /* This ensures the button aligns to the right */
+        justify-content: space-between; 
         align-items: center;
         margin-top:-80px;
 
@@ -107,7 +107,7 @@ $user_name = $_SESSION['user_name']; // Assuming user name is stored in session
     <div class="container">
         <div class="nav-links">
             <a href="home.php">Home</a>
-            <!-- <a href="about_us.php">About Us</a> -->
+           
             <a href="check_booking.php">Booking</a>
             <a href="history.php">Booking History</a>
             <a href="profile.php">Profile</a>
@@ -116,5 +116,8 @@ $user_name = $_SESSION['user_name']; // Assuming user name is stored in session
 
       
     </div>
+
+    
+
 </body>
 </html>

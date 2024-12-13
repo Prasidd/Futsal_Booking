@@ -3,11 +3,11 @@
 
 include('user_dashboard.php');
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php'); // Redirect to login if not logged in
+    header('Location: ../login.php'); 
     exit();
 }
 
-$user_name = $_SESSION['user_name']; // Assuming user name is stored in session
+$user_name = $_SESSION['user_name']; 
 ?>
 
 <!DOCTYPE html>
@@ -105,22 +105,19 @@ $user_name = $_SESSION['user_name']; // Assuming user name is stored in session
             color: #555;
         }
 
-     
         footer {
             background-color: #030e2e;
             color: white;
             text-align: center;
             padding: 20px;
             font-size: 16px;
+           
         }
-
+     
+     
     </style>
 </head>
 <body>
-    <!-- Header -->
-  
-
-    <!-- Hero Section -->
     <section class="hero">
         <div class="text">
             <h2>Book Your Futsal Court Now!</h2>
@@ -131,13 +128,10 @@ $user_name = $_SESSION['user_name']; // Assuming user name is stored in session
         </div>
         <img src="../images/ground.jpg" width ="600px" height ="400px" alt="Futsal Court Image">
     </section>
-
-
-
-    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Futsal Booking. All Rights Reserved.</p>
     </footer>
+ 
 </body>
 </html>
 

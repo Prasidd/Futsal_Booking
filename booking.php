@@ -254,7 +254,7 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
         </div>
     </div>
 </div>
-
+                                                                  
 </body>
 <script>
     

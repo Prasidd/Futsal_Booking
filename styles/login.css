@@ -1,4 +1,4 @@
-/* General reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,6 @@
     font-family: 'Arial', sans-serif;
 }
 
-/* Body styling */
 body {
     background-color: #030e2e;
     color: #333;
@@ -18,7 +17,6 @@ body {
     height: 100vh;
 }
 
-/* Main container styling */
 .container {
     background-color: #fff;
     padding: 40px;
@@ -33,22 +31,19 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Header styling */
 header {
     text-align: center;
     font-size: 26px;
     font-weight: bold;
-    color: #030e2e; /* Dark blue */
+    color: #030e2e; 
     margin-bottom: 20px;
 }
 
-/* Form styling */
 .form {
     display: flex;
     flex-direction: column;
 }
 
-/* Form input styling */
 .input-box {
     margin-bottom: 20px;
 }
@@ -74,7 +69,6 @@ header {
     border-color: #030e2e;
 }
 
-/* Submit button styling */
 .submit {
     background-color: #030e2e;
     color: white;
@@ -90,7 +84,6 @@ header {
     background-color: #021a33;
 }
 
-/* Footer for registration link */
 footer {
     text-align: center;
     margin-top: 20px;
@@ -111,7 +104,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Popup message styling */
 .message-popup {
     position: fixed;
     top: 50%;
@@ -132,7 +124,6 @@ footer a:hover {
     margin-bottom: 15px;
 }
 
-/* Exit button for popup */
 .close-btn {
     background-color:white;
     color: #030e2e;
@@ -148,41 +139,7 @@ footer a:hover {
     color: white;
 }
 
-/* Add a smooth fade-in effect for the popup */
 .message-popup {
     animation: fadeIn 0.3s ease-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Mobile responsive styles */
-@media screen and (max-width: 480px) {
-    .container {
-        padding: 30px;
-        width: 90%;
-    }
-
-    header {
-        font-size: 22px;
-    }
-
-    .input-box input, .submit {
-        font-size: 14px;
-        padding: 12px;
-    }
-
-    footer p {
-        font-size: 12px;
-    }
-
-    footer a {
-        font-size: 14px;
-    }
-}

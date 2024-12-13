@@ -1,4 +1,4 @@
-/* Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +6,16 @@
     font-family: 'Arial', sans-serif;
 }
 
-/* Sidebar Styles */
 .sidebar {
     width: 250px;
     height: 100vh;
     background-color: #030e2e;
-    position: fixed; /* Keep it fixed on the left side */
+    position: fixed;
     top: 0;
     left: 0;
     padding: 20px;
     color: white;
-    z-index: 100; /* Ensure it stays above other content */
+    z-index: 100; 
 }
 
 .sidebar .logo h2 {
@@ -49,17 +48,15 @@
     border-radius: 5px;
 }
 
-/* Main Content Styles */
 .main-content {
-    margin-left: 250px; /* Ensure it does not overlap the sidebar */
+ 
     padding: 20px;
-    background-color: #f4f7fa; /* Light background for the content */
-    min-height: 100vh; /* Ensure content fills the screen */
+    background-color: #f4f7fa; 
+    min-height: 100vh; 
 }
 
-/* Add padding to the body to avoid content being hidden behind the sidebar */
 body {
-    padding-left: 250px; /* Same as sidebar width */
+    padding-left: 250px; 
 }
 
 .main-content h1 {
@@ -101,30 +98,3 @@ body {
     font-weight: 600;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    /* For small screens, make the sidebar width smaller */
-    .sidebar {
-        width: 200px;
-    }
-
-    /* Adjust the main content for smaller screens */
-    .main-content {
-        margin-left: 200px; /* Adjusted for the smaller sidebar width */
-    }
-
-    /* Adjust the body padding for smaller screens */
-    body {
-        padding-left: 200px;
-    }
-
-    .stats-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .stat-card {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}

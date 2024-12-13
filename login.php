@@ -1,23 +1,20 @@
 <?php
 session_start();
-include 'config.php'; // Make sure this file contains your database connection
+include 'config.php';
 
-// Initialize message variable
+
 $message = '';
 
 if(isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
 
-    // Check if the user exists
     $query = mysqli_query($conn, "SELECT * FROM `user` WHERE u_email = '$email'") or die("Query failed");
     $user = mysqli_fetch_assoc($query);
 
     if($user) {
-        // Verify password
+       
         if(password_verify($password, $user['u_password'])) {
-
-            // Password is correct, start the session
             $_SESSION['user_id'] = $user['u_id'];
             $_SESSION['user_name'] = $user['u_name'];
             $_SESSION['user_email'] = $user['u_email'];
@@ -50,8 +47,6 @@ if(isset($_POST['submit'])) {
 <body>
     <section class="container">
         <header>Login Form</header>
-
-        <!-- Popup message box -->
         <?php if ($message != ''): ?>
         <div id="popup-message" class="message-popup">
             <p><?php echo $message; ?></p>

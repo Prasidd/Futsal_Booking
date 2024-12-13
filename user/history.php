@@ -1,9 +1,8 @@
 <?php
 include('user_dashboard.php');
-$conn = mysqli_connect('localhost', 'root', '', 'futsal_management') or die('Connection failed');
-
+include ('../config.php');
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+   header("Location: ../login.php"); 
     exit();
 }
 
@@ -74,6 +73,17 @@ $result = mysqli_query($conn, $query);
             border: 1px solid #ddd;
             color: #030e2e;
         }
+
+        footer {
+            background-color: #030e2e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            position:fixed;
+            bottom:0px;
+            width:100%;
+        }
     </style>
 </head>
 <body>
@@ -84,7 +94,7 @@ $result = mysqli_query($conn, $query);
         <h2>Your Booking History</h2>
 
         <?php if (mysqli_num_rows($result) > 0): ?>
-            <!-- Display booking history using divs -->
+           
             <div class="booking-history">
                 <?php while ($row = mysqli_fetch_assoc($result)): ?>
                     <div class="booking-item">
@@ -103,6 +113,8 @@ $result = mysqli_query($conn, $query);
             <div class="message">You have no past bookings.</div>
         <?php endif; ?>
     </div>
-
+    <footer>
+        <p>&copy; 2024 Futsal Booking. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

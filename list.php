@@ -2,7 +2,6 @@
 session_start();
 include 'config.php';
 
-
 $query = "SELECT * FROM `user`";
 $result = mysqli_query($conn, $query);
 
@@ -36,8 +35,7 @@ if (isset($_GET['delete_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User Data</title>
-    <link rel="stylesheet" href="styles/admin.css"> <!-- You can add your own styling -->
-</head>
+    <link rel="stylesheet" href="styles/admin.css"> 
 <body>
 <div class="sidebar">
         <div class="logo">
@@ -47,7 +45,6 @@ if (isset($_GET['delete_id'])) {
             <li><a href="admin.php">Dashboard</a></li>
             <li><a href="list.php">Users</a></li>
             <li><a href="booking.php">Bookings</a></li>
-           
             <li><a href="admin_logout.php">Logout</a></li>
         </ul>
     </div>
@@ -105,6 +102,6 @@ if (isset($_GET['delete_id'])) {
 </html>
 
 <?php
-// Close the database connection
+
 mysqli_close($conn);
 ?>

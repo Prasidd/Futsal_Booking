@@ -1,7 +1,6 @@
 <?php
 include 'config.php';
-$message = ''; // Variable to store messages
-
+$message = ''; 
 if(isset($_POST['submit'])){
     $name = mysqli_real_escape_string($conn,$_POST['name']);
     $email = mysqli_real_escape_string($conn,$_POST['email']);
@@ -10,7 +9,6 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
     $cpass = $_POST['cpassword'];
 
-    // Hash the password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $hashed_c_password = password_hash($cpass, PASSWORD_DEFAULT);
 
@@ -38,7 +36,6 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles/register.css" />
     <script>
-        // Function to close the popup when the 'Exit' button is clicked
         function closePopup() {
             document.getElementById("popup-message").style.display = "none";
         }

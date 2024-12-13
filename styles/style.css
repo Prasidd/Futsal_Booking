@@ -33,17 +33,17 @@ body{
 .content {
     background-color: rgb(19, 17, 17);
     height: 70vh;
-    position: absolute; /* Position the overlay */
-    top: 50%; /* Center it vertically */
-    left: 50%; /* Center it horizontally */
-    transform: translate(-50%, -50%); /* Center it precisely */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: white; /* Text color for contrast */
+    position: absolute; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     padding: 20px;
-    border-radius: 8px; /* Optional: Rounded corners */
+    border-radius: 8px; 
     text-align: center;
-    width: 60%; /* Adjust width as needed */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: Shadow for better visibility */
+    width: 60%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: row;
 }

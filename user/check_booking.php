@@ -5,18 +5,20 @@ include ('../config.php');
 
 $message = '';
 
-// Check if the form is submitted
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php"); 
+    exit();
+}
+
 if (isset($_POST['submit'])) {
-    // Check if the form fields are set
+   
     if (isset($_POST['date']) && isset($_POST['time']) && isset($_POST['payment_method'])) {
-        $user_id = $_SESSION['user_id']; // Assuming user is logged in and their ID is stored in session
+        $user_id = $_SESSION['user_id']; 
         $booking_date = $_POST['date'];
         $booking_time = $_POST['time'];
         $payment_method = $_POST['payment_method'];
-        $booking_amount = 2500; // Fixed booking amount
+        $booking_amount = 2500; 
         
-       
-
             $query = mysqli_query($conn, "SELECT * FROM booking WHERE b_date = '$booking_date' AND b_time = '$booking_time' AND b_status != 'completed'");
 
             if (mysqli_num_rows($query) > 0) {
@@ -53,13 +55,7 @@ if (isset($_POST['submit'])) {
     <title>User Booking</title>
   
     <style>
-        /* Add styles for form */
-        /* body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fa;
-            color: #333;
-            line-height: 1.6;
-        } */
+
 
         .form-container {
             width: 50%;
@@ -116,6 +112,17 @@ if (isset($_POST['submit'])) {
             font-weight: bold;
             color: #030e2e;
         }
+
+        footer {
+            background-color: #030e2e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            
+        }
+
+        
     </style>
 </head>
 <body>
@@ -124,7 +131,6 @@ if (isset($_POST['submit'])) {
     <div class="form-container">
         <h1>Book Your Slot</h1>
 
-        <!-- Booking Form -->
         <form method="POST" action=""> 
 
             <label for="date">Select a Date:</label>
@@ -166,5 +172,8 @@ if (isset($_POST['submit'])) {
             <div class="message"><?php echo $message; ?></div>
         <?php endif; ?>
     </div>
+    <footer>
+        <p>&copy; 2024 Futsal Booking. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

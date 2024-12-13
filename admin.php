@@ -1,42 +1,39 @@
 <?php
-// Start the session
+
 session_start();
 
-// Check if the user is logged in as admin
+
 if (!isset($_SESSION['admin_id'])) {
-    header("Location: admin_login.php");  // Redirect to login page if not logged in
+    header("Location: admin_login.php"); 
     exit;
 }
-// Database connection details
-include 'config.php'; // Database connection
 
-// Fetch total users from the database (replace 'users' with your actual table name)
+include 'config.php'; 
+
+
 $total_users_sql = "SELECT COUNT(*) AS total_users FROM user";
 $result = $conn->query($total_users_sql);
 $row = $result->fetch_assoc();
 $total_users = $row['total_users'];
 
-// Fetch completed bookings (replace 'bookings' with your actual table name)
 $completed_bookings_sql = "SELECT COUNT(*) AS completed_bookings FROM booking WHERE b_status = 'completed'";
 $result = $conn->query($completed_bookings_sql);
 $row = $result->fetch_assoc();
 $completed_bookings = $row['completed_bookings'];
 
-// Fetch pending bookings (replace 'bookings' with your actual table name)
 $pending_bookings_sql = "SELECT COUNT(*) AS pending_bookings FROM booking WHERE b_status = 'pending'";
 $result = $conn->query($pending_bookings_sql);
 $row = $result->fetch_assoc();
 $pending_bookings = $row['pending_bookings'];
 
-// Fetch total income (replace 'bookings' with your actual table name)
+
 $total_income_sql = "8000";
-// $result = $conn->query($total_income_sql);
-// $row = $result->fetch_assoc();
+
 $total_income = $total_income_sql;
 
 
 $new_booking = '2';
-// Close the database connection
+
 $conn->close();
 ?>
 
@@ -57,7 +54,6 @@ $conn->close();
             <li><a href="#">Dashboard</a></li>
             <li><a href="list.php">Users</a></li>
             <li><a href="booking.php">Bookings</a></li>
-           
             <li><a href="admin_logout.php">Logout</a></li>
         </ul>
     </div>
@@ -84,7 +80,7 @@ $conn->close();
             </div>
             <div class="stat-card">
                 <h3>Total Income</h3>
-                <p>$<?php echo number_format($total_income, 2); ?></p>
+                <p><?php echo number_format($total_income, 2); ?></p>
             </div>
         </div>
     </div>
