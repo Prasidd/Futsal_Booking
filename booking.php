@@ -230,7 +230,7 @@ $bookings_data = mysqli_fetch_all($bookings_query, MYSQLI_ASSOC);
                     <th>User Name</th> 
                     <th>User Contact</th> 
                     <th>Status</th>
-                    <th>Booked Date</th>
+                    <th>Booking Date</th>
                     <th>Booked for</th>
                     <th>Change Status</th>
                 </tr>

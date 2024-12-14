@@ -26,7 +26,6 @@ $result = $conn->query($pending_bookings_sql);
 $row = $result->fetch_assoc();
 $pending_bookings = $row['pending_bookings'];
 
-
 $total_income_sql = "8000";
 
 $total_income = $total_income_sql;

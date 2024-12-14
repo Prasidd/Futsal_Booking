@@ -8,7 +8,6 @@ if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
 
-
     $query = mysqli_query($conn, "SELECT * FROM `admin` WHERE a_email = '$email' AND a_password = '$password'") or die("Query failed");
 
     if (mysqli_num_rows($query) > 0) {

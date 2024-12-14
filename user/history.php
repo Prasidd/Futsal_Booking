@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id']; 
 
-$query = "SELECT * FROM booking WHERE u_id = '$user_id' ORDER BY b_date DESC";
+$query = "SELECT * FROM booking WHERE u_id = '$user_id' ORDER BY b_date ASC";
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -75,15 +75,17 @@ $result = mysqli_query($conn, $query);
         }
 
         footer {
-            background-color: #030e2e;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 16px;
-            position:fixed;
-            bottom:0px;
-            width:100%;
-        }
+    background-color: #030e2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    width: 100%;
+    position: relative; 
+    bottom: 0; /
+    margin-top: auto; 
+}
+
     </style>
 </head>
 <body>
@@ -98,7 +100,7 @@ $result = mysqli_query($conn, $query);
             <div class="booking-history">
                 <?php while ($row = mysqli_fetch_assoc($result)): ?>
                     <div class="booking-item">
-                        <h3>Booking ID: <?php echo htmlspecialchars($row['b_id']); ?></h3>
+                        <h3>Booking ID: <?php echo $row['b_id']; ?></h3>
                         <div class="booking-details">
                             <p><strong>Booking Date:</strong> <?php echo $row['b_date']; ?></p>
                             <p><strong>Booking Time:</strong> <?php echo $row['b_time']; ?></p>

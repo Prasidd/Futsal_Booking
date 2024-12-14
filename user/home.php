@@ -17,7 +17,7 @@ $user_name = $_SESSION['user_name'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Futsal Booking</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  
     <style>
        
         header {
@@ -78,11 +78,12 @@ $user_name = $_SESSION['user_name'];
             border-radius: 5px;
             text-decoration: none;
             display: inline-block;
-            transition: background-color 0.3s ease;
+            
         }
 
         .cta-btn:hover {
-            background-color: #444;
+            background-color: white;
+           color: #030e2e;
         }
 
 

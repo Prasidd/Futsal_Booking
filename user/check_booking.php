@@ -6,7 +6,7 @@ include ('../config.php');
 $message = '';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php"); 
+    header("Location: login.php"); 
     exit();
 }
 
@@ -28,6 +28,7 @@ if (isset($_POST['submit'])) {
                                          VALUES ('$user_id', '$booking_date', '$booking_time', 'pending', '$payment_method', '$booking_amount')";
                 if (mysqli_query($conn, $insert_booking_query)) {
                     $booking_id = mysqli_insert_id($conn);
+                    
                     $insert_payment_query = "INSERT INTO payment (u_id, b_id, p_status) 
                                               VALUES ('$user_id', '$booking_id', 'pending')";
                     if (mysqli_query($conn, $insert_payment_query)) {
@@ -119,7 +120,6 @@ if (isset($_POST['submit'])) {
             text-align: center;
             padding: 20px;
             font-size: 16px;
-            bottom:0px;
             
         }
 

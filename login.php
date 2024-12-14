@@ -13,13 +13,11 @@ if(isset($_POST['submit'])) {
     $user = mysqli_fetch_assoc($query);
 
     if($user) {
-       
         if(password_verify($password, $user['u_password'])) {
             $_SESSION['user_id'] = $user['u_id'];
             $_SESSION['user_name'] = $user['u_name'];
             $_SESSION['user_email'] = $user['u_email'];
             
-
             header('Location: user/home.php'); 
             exit;
         } else {
