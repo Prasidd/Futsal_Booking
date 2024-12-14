@@ -2,13 +2,14 @@
 session_start();
 include 'config.php';
 
-$query = "SELECT * FROM `user`";
-$result = mysqli_query($conn, $query);
 
 if (!isset($_SESSION['admin_id'])) {
     header("Location: admin_login.php");  
     exit();
 }
+
+$query = "SELECT * FROM `user`";
+$result = mysqli_query($conn, $query);
 
 if (!$result) {
     die("Query failed: " . mysqli_error($conn)); 
